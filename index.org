@@ -1,14 +1,8 @@
----
-title: "The Relative Performance of Asset Classes"
-author: "Matt Brigida: Milken Institute, Center for Financial Markets"
-affiliation: "Milken Institute Center for Financial Markets"
-date: "06/02/2015"
-output: ioslides_presentation
-runtime: shiny
-smaller: true
----
+#+title: "The Relative Performance of Asset Classes"
+#+author: "Matt Brigida, Ph.D.
 
-## Introduction
+
+* Introduction
 
 In this interactive presentation we'll get an idea of how different asset classes perform.  The various classes we'll look at are:
 
@@ -18,14 +12,23 @@ In this interactive presentation we'll get an idea of how different asset classe
 4.  Long-term risky debt
 5.  Equity
 
-[graphic: runners at the starting block]
 
-## Background
+* Background
 
 <!---The main holders of each asset class
 as well as the size of each market -->
 
-## App
+* Pull and Visualize Data
+
+#+begin_src R :cache yes :session *R* :results none :exports none
+library(quantmod)
+
+
+tbill3mo <- getSymbols('TB3MS', src='FRED', auto.assign=FALSE)
+nasdaq <- getSymbols('NASDAQCOM', src='FRED', auto.assign=FALSE)
+
+#+end_src
+
 
 <!---plot each asset class over any time interval
 pull data from FRED -->
