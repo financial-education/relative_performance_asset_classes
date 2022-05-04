@@ -1,6 +1,6 @@
 #+title: "The Relative Performance of Asset Classes"
 #+author: "Matt Brigida, Ph.D.
-
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 * Introduction
 
@@ -20,12 +20,15 @@ as well as the size of each market -->
 
 * Pull and Visualize Data
 
+Below we will pull data on the above asset classes, and calculate holding period returns.  We will then plot and compare these returns.
+
 #+begin_src R :cache yes :session *R* :results none :exports none
 library(quantmod)
 
 
 tbill3mo <- getSymbols('TB3MS', src='FRED', auto.assign=FALSE)
 nasdaq <- getSymbols('NASDAQCOM', src='FRED', auto.assign=FALSE)
+
 
 #+end_src
 
